@@ -13,6 +13,9 @@ app.use("/api/test", testRoutes);
 const userRoutes = require("./routes/userRoutes");
 app.use("/api/users", userRoutes);
 
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
+
 app.get("/", (req, res) => {
 	res.send("Solar link+ Backend is organised");
 });
