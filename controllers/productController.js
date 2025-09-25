@@ -3,7 +3,9 @@ const Product = require("../models/Product");
 const createProduct = async (req, res) => {
 	try {
 		const { name, description, usage, price, quantity, image } = req.body;
-
+		if (!name || !description || !usage || !price || !quantity || !image) {
+			return res.status(400).json({ message: "Required fields missing" });
+		}
 		const product = await Product.create({
 			name,
 			description,
