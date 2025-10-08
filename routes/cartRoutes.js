@@ -8,9 +8,9 @@ const {
 } = require("../controllers/cartController");
 const { protect } = require("../middleware/authmiddleware");
 
-router.post("/", protect, addToCart);
-router.get("/", protect, getCart);
-router.put("/", protect, updateCartItem);
-router.delete("/:id", protect, removeFromCart);
+router.post("/add", protect, addToCart);
+router.get("/get", protect, getCart);
+router.put("/update", protect, updateCartItem);
+router.delete("/remove/:id", protect, removeFromCart);
 
 module.exports = router;

@@ -1,8 +1,7 @@
 const Order = require("../models/Order");
-const Product = require("../models/Product");
 const Cart = require("../models/Cart");
 
-const createOrderFromCart = async (requestAnimationFrame, res) => {
+const createOrderFromCart = async (req, res) => {
 	try {
 		const userId = req.user._id;
 		const cart = await Cart.findOne({ user: userId }).populate(

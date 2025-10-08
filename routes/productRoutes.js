@@ -7,7 +7,7 @@ const {
 } = require("../controllers/productController");
 const { protect } = require("../middleware/authmiddleware");
 
-router.post("/", protect, createProduct);
+router.post("/create", protect, createProduct);
 router.get("/", getProducts);
 router.get("/:id", getProductById);
 
